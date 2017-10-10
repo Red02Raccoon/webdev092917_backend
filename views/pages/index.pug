@@ -42,7 +42,10 @@ body
         section.section.section__welcome
             .welcome__top
                 if (msg)
-                    .status= msg
+                    .popUp__message
+                        a.popUp__message-close(href='#')
+                        .popUp__message-content
+                            .popUp__message-title= msg
                 .login
                     a.login__link(href="#") Авторизоваться
             .welcome__center
@@ -85,10 +88,10 @@ body
                             form.form(action='/' method="POST")
                                 .login-name
                                     label(for="login").login-name__icon.fa.fa-user
-                                    input(type="text" name="login" id="login" required).login-name__field
+                                    input(type="text" name="login" id="login").login-name__field
                                 .password
                                     label(for="password").password__icon.fa.fa-key
-                                    input(type="password" id="password" name="password" required).password__field
+                                    input(type="password" id="password" name="password").password__field
                                 .checkbox
                                     input(type="checkbox" id="check" name="check" value='yes').checkbox__item
                                     label(for="check").checkbox__label
@@ -113,9 +116,12 @@ body
                                             button(type='submit').nav__link Войти
             .welcome__bottom
                 .bottom-text © Владимир Астахов | создано с любовью в LoftSchool | 2016
+    script(src='assets/scripts/components/jquery-3.2.1.min.js')
+    script(src='assets/scripts/components/jquery.bpopup.min.js')
     script(src='assets/scripts/components/flip.js')
     script(src='assets/scripts/components/parallax.js')
     script(src='assets/scripts/components/preloader.js')
+    script(src='assets/scripts/main.js')
 
 
 
