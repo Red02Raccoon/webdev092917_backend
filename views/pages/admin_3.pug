@@ -1,0 +1,23 @@
+extends ../admin
+
+block title
+    title Панель администрирования - Таб_3
+
+block admin__content
+    .content-tab
+        h2.content-tab__title Страница "Мои работы"
+        if (msgfile)
+            .status= msgfile
+        form.content-tab3__addproject(action='/admin_3/addWork' method="POST" enctype="multipart/form-data")
+            .name.content-tab3__name Добавить работу
+            input(type="text" placeholder="Название проекта" name="").content-tab3__name.admin-input
+            input(type="text" placeholder="Технологии" name="").content-tab3__tech.admin-input
+            .tabs__form-row
+                label.file-input
+                    .file-input__fake
+                        .file-input__icon
+                            img(src='assets/images/file-upload.png', alt='')
+                        .file-input__text Загрузить картинку
+                    input.tabs__input(name='', type='file')
+            .content-tab3__button
+                button(type='submit').btn-admin.btn-admin--add Добавить

@@ -1,0 +1,32 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        block title
+            title Панель администрирования
+        meta(content="" name="description")
+        meta(content="" name="keywords")
+        meta(content="width=device-width, initial-scale=1" name="viewport")
+        meta(content="ie=edge" http-equiv="x-ua-compatible")
+        link(rel='stylesheet' href='assets/styles/main.min.css')
+    body
+        section.admin
+            header.header
+                .header__left
+                    h1.header__title Панель администрирования
+                .header__right
+                    a(href="/").header__link-toMainPage Вернуться на сайт
+            .admin__tabs
+                ul.tab
+                    li.tab__item
+                        a(href="/admin").tab__link Таб 1
+                    li.tab__item
+                        a(href="/admin_2").tab__link Таб 2
+                    li.tab__item
+                        a(href="/admin_3").tab__link Таб 3
+            .admin__main
+                block admin__content
+                .pop-up
+                    .pop-up__title Сообщение отправлено
+                    button(type='submit').btn-admin.btn-admin--close Закрыть
+                
