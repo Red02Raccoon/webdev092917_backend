@@ -42,10 +42,9 @@ body
         section.section.section__welcome
             .welcome__top
                 if (msg)
-                    .popUp__message
-                        a.popUp__message-close(href='#')
-                        .popUp__message-content
-                            .popUp__message-title= msg
+                    .pop-up
+                        .pop-up__title= msg
+                        button(type='submit').btn-admin.btn-admin--close Закрыть
                 .login
                     a.login__link(href="#") Авторизоваться
             .welcome__center

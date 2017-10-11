@@ -1,7 +1,7 @@
 /*подключение плагина модального окна*/
 
 $(function() {
-    if ( $(".pop-up") && ($(".pop-up__title").text() == "Пользователя не существует") || ($(".pop-up__title").text() == "Все поля обязательны к заполнению!")) {
+    if ( $(".pop-up") && $(".pop-up__title").text()) {
         $(".pop-up").bPopup();
         $('.btn-admin--close').on('click', function(e) {
             e.preventDefault();
@@ -11,7 +11,7 @@ $(function() {
         });
     }
 
-    $('.login__link').on('click', function(e) {
+    $('.btn-admin--close').on('click', function(e) {
         e.preventDefault();
         $(".pop-up").remove();
     });

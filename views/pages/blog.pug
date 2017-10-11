@@ -63,14 +63,9 @@ html
                 aside.blog-section-2__left
                     .wrapper
                         ul.article-list
-                            li.article-list__item
-                                a(href="#").article-list__link  Самое важное в SASS
-                            li.article-list__item
-                                a(href="#").article-list__link Приёмы в вёрстке, без которых не обходится ни один сайт
-                            li.article-list__item
-                                a(href="#").article-list__link Самый необходимый набор Gulp плагинов
-                            li.article-list__item
-                                a(href="#").article-list__link Почему я выбрал Jade
+                            each index in articles
+                                li.article-list__item
+                                    a(href="#").article-list__link= index.title
                 .blog-section-2__center
                     each index in articles
                         article.article
@@ -83,8 +78,6 @@ html
                                                 })
                             .article__data= date
                             .article__text= index.body    
-                            .article__code
-                                img(src="assets/images/code.png" alt="code")
             section.blog__section-3
                 .footer
                     .footer__top

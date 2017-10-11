@@ -8,8 +8,6 @@ block admin__content
         h2.content-tab__title Страница "Блог"
         form.content-tab2__addArticle(action='/admin_2/blog' method="POST" enctype="application/x-www-form-urlencoded")
             .name.content-tab2__name Добавить запись
-            if (msgblog)
-                .status= msgblog
             input(type="text" placeholder="Название" name="title").content-tab2__name.admin-input
             - 
               var data = new Date().toLocaleDateString('ru', { 
@@ -21,3 +19,7 @@ block admin__content
             textarea(placeholder="Содержание" name='text').content-tab2__text.admin-input
             .content-tab2__button
                 button(type='submit').btn-admin.btn-admin--add Добавить
+                if (msgblog)
+                    .pop-up
+                        .pop-up__title= msgblog
+                        button(type='submit').btn-admin.btn-admin--close Закрыть
